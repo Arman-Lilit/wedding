@@ -327,12 +327,14 @@ time.map-time {
 
 .guest-form-container {
   display: flex;
+  padding: 8px;
   flex-direction: column;
   align-items: center;
 }
 
 .form-title {
   font-size: var(--fs-2xl);
+  text-align: center;
   font-family: poqrik;
 }
 
