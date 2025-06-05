@@ -226,7 +226,7 @@ section {
 .wedding-day-map {
   text-align: center;
   font-size: var(--fs-5xl);
-  font-family: sans-serif-armenia;
+  font-family: vrdznagir;
   margin-bottom: 16px;
 }
 
@@ -282,6 +282,7 @@ time.map-time {
   font-size: var(--fs-md, 16px);
   color: var(--text-color, #333);
   text-align: start;
+  font-family: poqrik;
 }
 
 .location-card {
@@ -293,8 +294,9 @@ time.map-time {
 
 .location-title {
   text-align: center;
-  font-size: 24px;
+  font-size: var(--fs-xl);
   font-weight: bold;
+  font-family: poqrik;
   margin-bottom: 16px;
 }
 
@@ -331,7 +333,7 @@ time.map-time {
 
 .form-title {
   font-size: var(--fs-2xl);
-  font-family: brand-gyumri;
+  font-family: poqrik;
 }
 
 /* From Uiverse.io by opMorn */
@@ -428,6 +430,7 @@ time.map-time {
   margin-bottom: 15px;
   color: #333;
   font-size: 20px;
+  font-family: poqrik;
 }
 
 .footer-icons {
@@ -473,6 +476,39 @@ time.map-time {
   color: #888;
 }
 
+@media screen and (max-width: 768px) {
+  h1 {
+    line-height: 135vh;
+    font-size: var(--fs-6xl);
+  }
+  .map-card {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .map-title {
+    text-align: center;
+  }
+  .map-address {
+    text-align: center;
+  }
+
+  .time-card {
+    font-size: var(--fs-lg);
+    text-align: center;
+  }
+
+  .time-card:first-child {
+    font-size: var(--fs-lg);
+    text-align: center;
+  }
+
+  h3 {
+    font-size: var(--fs-md);
+  }
+}
 @media screen and (max-width: 425px) {
   .header-wedding-timer {
     font-size: var(--fs-md);
@@ -515,41 +551,6 @@ time.map-time {
     font-size: var(--fs-sm);
   }
 }
-
-@media screen and (max-width: 768px) {
-  h1 {
-    line-height: 135vh;
-    font-size: var(--fs-6xl);
-  }
-  .map-card {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .map-title {
-    text-align: center;
-  }
-  .map-address {
-    text-align: center;
-  }
-
-  .time-card {
-    font-size: var(--fs-lg);
-    text-align: center;
-  }
-
-  .time-card:first-child {
-    font-size: var(--fs-lg);
-    text-align: center;
-  }
-
-  h3 {
-    font-size: var(--fs-md);
-  }
-}
-
 @media screen and (max-height: 550px) {
   .header-wedding-timer {
     display: none;
