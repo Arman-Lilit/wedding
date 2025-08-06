@@ -81,7 +81,7 @@ function sendToWhatsApp(event) {
 
   let message = "";
 
- if (coming === "yes") {
+ if (isComing === "yes") {
     message =
       `Բարև✨։  ${name}: \n` +
       `Գալու եմ հարսանիքին: \n` +
