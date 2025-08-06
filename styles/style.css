@@ -401,8 +401,7 @@ time.map-time {
   height: 18px;
   cursor: pointer;
 }
-
-[class^="whatsapp-button"] {
+.whatsapp-button-Lil {
   background-color: transparent;
   border: 2px solid #BC8F8F;
   padding: 10px 25px;
@@ -413,13 +412,32 @@ time.map-time {
   transition: background-color 0.3s, color 0.3s;
 }
 
-[class^="whatsapp-button"]:focus,
-[class^="whatsapp-button"]:active,
-[class^="whatsapp-button"]:hover {
+.whatsapp-button-Lil:focus,
+.whatsapp-button-Lil:active,
+.whatsapp-button-Lil:hover {
   background-color: #BC8F8F;
   color: #ffffff;
   outline: none;
 }
+
+.whatsapp-button-Arm {
+  background-color: transparent;
+  border: 2px solid #BC8F8F;
+  padding: 10px 25px;
+  font-family: "sans-serif-armenia", sans-serif;
+  border-radius: 12px;
+  color: #BC8F8F;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.whatsapp-button-Arm:focus,
+.whatsapp-button-Arm:active,
+.whatsapp-button-Arm:hover {
+  background-color: #BC8F8F;
+  color: #ffffff;
+  outline: none;
+}
+
 
 .footer {
   padding: 20px 0;
