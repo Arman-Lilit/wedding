@@ -71,28 +71,38 @@ function toggleGuestCount(event) {
   }
   guestCountContainer.value = "";
 }
+function sendToWhatsApp(receiver) {
+  const name = document.getElementById("guestName").value.trim();
+  const count = document.getElementById("guestCount").value.trim();
+  const isComing = document.querySelector('input[name="isComing"]:checked');
+  
+  if (!name || !isComing) {
+    alert("Խնդրում ենք լրացնել բոլոր անհրաժեշտ դաշտերը։");
+    return;
+  }
 
-function sendToWhatsApp(event) {
-  event.preventDefault();
-  const name = document.getElementById("guestName").value;
-  const count = document.getElementById("guestCount").value;
-  const coming = document.querySelector('input[name="isComing"]:checked').value;
-
+  const coming = isComing.value;
   let message = "";
+
   if (coming === "yes") {
     message =
       `Բարև✨։ \n` +
       `${name}: \n` +
-      `Գալու եմ հարսանիքին: \n` +
+      `Գալու եմ հարսանիքին։ \n` +
       `Հյուրերի քանակը - ${count}:`;
   } else {
-    message = `Բարև✨։ ${name} : \n` + ` Կներեք չեմ կարող գալ:`;
+    message = `Բարև✨։ ${name} : \nԿներեք, չեմ կարող գալ։`;
   }
+
   const encodedMessage = encodeURIComponent(message);
-  const phoneLil = "37494881206"; // Replace with your actual number
-  const phoneArm = "37499110199";
-  let urlLil = `https://wa.me/${phoneLil}?text=${encodedMessage}`;
-  let urlArm = `https://wa.me/${phoneArm}?text=${encodedMessage}`;
-  window.open(urlLil, "_blank");
-  window.open(urlArm, "_blank");
+
+  const phones = {
+    arm: "37499110199", // Արման
+    lil: "37494881206", // Լիլիթ
+  };
+
+  const phone = phones[receiver];
+  const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
 }
