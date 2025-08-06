@@ -134,40 +134,42 @@
 
 
       <form class="guest-form" onsubmit="sendToWhatsApp(event)">
-        <div class="guest-form-container">
-          <div class="form-title">Խնդրում ենք հաստատել Ձեր ներկայությունը միջոցառմանը</div>
-          <div class="radio-group">
-            <div>
+      <div class="guest-form-container">
+        <div class="form-title">Խնդրում ենք հաստատել Ձեր ներկայությունը միջոցառմանը</div>
+        <div class="radio-group">
+          <div>
 
-              <label>
-                <input type="radio" name="isComing" value="yes" required onchange="toggleGuestCount(this)" />
-                Կգամ
-              </label>
-            </div>
-
-            <div>
-
-              <label>
-                <input type="radio" name="isComing" value="no" onchange="toggleGuestCount(this)" />
-                Չեմ կարողանա գալ
-              </label>
-            </div>
+            <label>
+              <input type="radio" name="isComing" value="yes" required onchange="toggleGuestCount(this)" />
+              Կգամ
+            </label>
           </div>
-          <div class="input-container">
-            <input required id="guestName" type="text" name="guestName" placeholder="Անուն Ազգանուն" value="" />
-          </div>
-
-          <div class="input-container">
-            <input required id="guestCount" type="number" name="guestCount" placeholder="Հյուրերի քանակ" value="" />
-          </div>
-
-
 
           <div>
-            <button type="submit" class="whatsapp-button-Arm">Ուղարկել Արմանին</button>
-            <button type="submit" class="whatsapp-button-Lil">Ուղարկել Լիլիթին</button>
-         </div>
+
+            <label>
+              <input type="radio" name="isComing" value="no" onchange="toggleGuestCount(this)" />
+              Չեմ կարողանա գալ
+            </label>
+          </div>
         </div>
+        <div class="input-container">
+          <input required id="guestName" type="text" name="guestName" placeholder="Անուն Ազգանուն" value="" />
+        </div>
+
+        <div class="input-container">
+          <input required id="guestCount" type="number" name="guestCount" placeholder="Հյուրերի քանակ" value="" />
+        </div>
+
+
+
+        <div>
+          <button type="submit"  class="whatsapp-button-Arm" value="arm">Ուղարկել
+            Արմանին</button>
+          <button type="submit"  class="whatsapp-button-Lil" value="lil">Ուղարկել
+            Լիլիթին</button>
+        </div>
+      </div>
 
       </form>
 

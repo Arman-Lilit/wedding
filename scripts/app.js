@@ -72,21 +72,23 @@ function toggleGuestCount(event) {
   guestCountContainer.value = "";
 }
 
-function sendToWhatsApp(receiver) {
+function sendToWhatsApp(event) {
+  event.preventDefault();
+  const receiver = event.submitter.value;
   const name = document.getElementById("guestName").value.trim();
   const count = document.getElementById("guestCount").value.trim();
   const isComing = document.querySelector('input[name="isComing"]:checked');
 
   let message = "";
 
-  if (coming === "yes") {
+  if (isComing === "yes") {
     message =
       `Բարև✨։ \n` +
       `${name}: \n` +
       `Գալու եմ հարսանիքին։ \n` +
       `Հյուրերի քանակը - ${count}`;
   } else {
-    message = `Բարև✨։ ${name} : \nԿներեք, չեմ կարող գալ։`;
+    message = `Բարև✨։ ${name} : \n Կներեք, չեմ կարող գալ։`;
   }
 
   const encodedMessage = encodeURIComponent(message);
@@ -97,6 +99,6 @@ function sendToWhatsApp(receiver) {
   };
 
   const phone = phones[receiver];
-  const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+  let url = `https://wa.me/${phone}?text=${encodedMessage}`;
   window.open(url, "_blank");
 }
