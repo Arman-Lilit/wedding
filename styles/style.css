@@ -404,11 +404,11 @@ time.map-time {
 
 [class^="whatsapp-button"] {
   background-color: transparent;
-  border: 2px solid #0dbf42;
+  border: 2px solid #BC8F8F;
   padding: 10px 25px;
   font-family: "sans-serif-armenia", sans-serif;
   border-radius: 12px;
-  color: #0dbf42;
+  color: #BC8F8F;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -416,7 +416,7 @@ time.map-time {
 [class^="whatsapp-button"]:focus,
 [class^="whatsapp-button"]:active,
 [class^="whatsapp-button"]:hover {
-  background-color: #0dbf42;
+  background-color: #BC8F8F;
   color: #ffffff;
   outline: none;
 }
