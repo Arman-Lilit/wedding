@@ -77,7 +77,7 @@ function sendToWhatsApp(event) {
   const receiver = event.submitter.value;
   const name = document.getElementById("guestName").value.trim();
   const count = document.getElementById("guestCount").value.trim();
-  const isComing = document.querySelector('input[name="isComing"]:checked');
+  const isComing = document.querySelector('input[name="isComing"]:checked').value;
 
   let message = "";
 
