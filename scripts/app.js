@@ -77,18 +77,6 @@ function sendToWhatsApp(receiver) {
   const count = document.getElementById("guestCount").value.trim();
   const isComing = document.querySelector('input[name="isComing"]:checked');
 
-  if (!name || !isComing) {
-    alert("Խնդրում ենք լրացնել բոլոր անհրաժեշտ դաշտերը։");
-    return;
-  }
-
-  const coming = isComing.value;
-
-  if (coming === "yes" && !count) {
-    alert("Խնդրում ենք նշել հյուրերի քանակը։");
-    return;
-  }
-
   let message = "";
 
   if (coming === "yes") {
