@@ -14,24 +14,17 @@
 
   <label for="guest-count">Հյուրերի քանակ:</label>
   <input type="number" id="guest-count" />
-  <button class="whatsapp-button-Arm" onclick="sendWhatsAppArm()">Ուղարկել WhatsApp-ով</button>
-  <button class="whatsapp-button-Lil" onclick="sendWhatsAppLil()">Ուղարկել WhatsApp-ով</button>
+  <button type="button" class="whatsapp-button-Arm" onclick="sendToWhatsApp('arm')">Ուղարկել Արմանին</button>
+  <button type="button" class="whatsapp-button-Lil" onclick="sendToWhatsApp('lil')">Ուղարկել Լիլիթին</button>
 
   <script>
-    const phoneNumberArm = "37499110199";
-    const phoneNumberLil = "37494881206";
+    const phoneNumber = "37499110199";
 
-    function sendWhatsAppArm() {
+    function sendWhatsApp() {
       const guestCount = document.getElementById("guest-count").value;
       const message = `Թիվ հյուր՝ ${guestCount}`;
-      const whatsappURLArm = `https://wa.me/${phoneNumberArm}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURLArm, "_blank");
-    }
-   function sendWhatsAppLil() {
-      const guestCount = document.getElementById("guest-count").value;
-      const message = `Թիվ հյուր՝ ${guestCount}`;
-      const whatsappURLLil = `https://wa.me/${phoneNumberLil}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappURLLil, "_blank");
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, "_blank");
     }
   </script>
 </body>
