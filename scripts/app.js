@@ -89,8 +89,10 @@ function sendToWhatsApp(event) {
     message = `Բարև✨։ ${name} : \n` + ` Կներեք չեմ կարող գալ:`;
   }
   const encodedMessage = encodeURIComponent(message);
-  const phone = "37494881206"; // Replace with your actual number
-  let url = `https://wa.me/${phone}?text=${encodedMessage}`;
-
-  window.open(url, "_blank");
+  const phoneLil = "37494881206"; // Replace with your actual number
+  const phoneArm = "37499110178";
+  let urlLil = `https://wa.me/${phoneLil}?text=${encodedMessage}`;
+  let urlArm = `https://wa.me/${phoneArm}?text=${encodedMessage}`;
+  window.open(urlLil, "_blank");
+  window.open(urlArm, "_blank");
 }
