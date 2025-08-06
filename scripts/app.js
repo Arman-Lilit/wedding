@@ -81,14 +81,13 @@ function sendToWhatsApp(event) {
 
   let message = "";
 
-  if (isComing === "yes") {
+ if (coming === "yes") {
     message =
-      `Բարև✨։ \n` +
-      `${name}: \n` +
-      `Գալու եմ հարսանիքին։ \n` +
-      `Հյուրերի քանակը - ${count}`;
+      `Բարև✨։  ${name}: \n` +
+      `Գալու եմ հարսանիքին: \n` +
+      `Հյուրերի քանակը - ${count}:`;
   } else {
-    message = `Բարև✨։ ${name} : \n Կներեք, չեմ կարող գալ։`;
+    message = `Բարև✨։ ${name} : \n` + ` Կներեք չեմ կարող գալ:`;
   }
 
   const encodedMessage = encodeURIComponent(message);
