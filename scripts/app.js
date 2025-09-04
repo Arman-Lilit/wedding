@@ -1,4 +1,6 @@
-const countdownDate = new Date("sep 5, 2025 00:00:00").getTime();
+const countdownDate = new Date("Sep 5, 2025 00:00:00").getTime();
+
+let countdown; // declare variable outside
 
 function updateCountdown() {
   const now = new Date().getTime();
@@ -9,8 +11,10 @@ function updateCountdown() {
 
   if (distance <= 0) {
     clearInterval(countdown);
-    document.querySelector(".countdown-timer").innerHTML =
-      "💍 Այսօր հարսանիքն է!";
+    const countdownElement = document.querySelector(".countdown-timer");
+    if (countdownElement) {
+      countdownElement.textContent = "💍 Այսօր հարսանիքն է!";
+    }
     header.classList.add("visible");
     return;
   }
@@ -22,16 +26,15 @@ function updateCountdown() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(
-    2,
-    "0"
-  );
-  document.getElementById("seconds").textContent = String(seconds).padStart(
-    2,
-    "0"
-  );
+  const dayEl = document.getElementById("days");
+  const hourEl = document.getElementById("hours");
+  const minEl = document.getElementById("minutes");
+  const secEl = document.getElementById("seconds");
+
+  if (dayEl) dayEl.textContent = String(days).padStart(2, "0");
+  if (hourEl) hourEl.textContent = String(hours).padStart(2, "0");
+  if (minEl) minEl.textContent = String(minutes).padStart(2, "0");
+  if (secEl) secEl.textContent = String(seconds).padStart(2, "0");
 
   if (!header.classList.contains("visible")) {
     header.classList.add("visible");
@@ -39,8 +42,8 @@ function updateCountdown() {
 }
 
 // Start countdown
-updateCountdown();
-const countdown = setInterval(updateCountdown, 1000);
+countdown = window.setInterval(updateCountdown, 1000);
+updateCountdown(); // initial call
 
 // Scroll animation
 const elements = document.querySelectorAll(".animate-on-scroll");
