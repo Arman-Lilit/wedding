@@ -12,8 +12,10 @@ function updateCountdown() {
   if (distance <= 0) {
     clearInterval(countdown);
     const countdownElement = document.querySelector(".countdown-timer");
+    const weddingDay = document.getElementById("weddingDay");
     if (countdownElement) {
       countdownElement.textContent = "💍 Այսօր հարսանիքն է!";
+      weddingDay.remove();
     }
     header.classList.add("visible");
     return;
@@ -80,11 +82,13 @@ function sendToWhatsApp(event) {
   const receiver = event.submitter.value;
   const name = document.getElementById("guestName").value.trim();
   const count = document.getElementById("guestCount").value.trim();
-  const isComing = document.querySelector('input[name="isComing"]:checked').value;
+  const isComing = document.querySelector(
+    'input[name="isComing"]:checked'
+  ).value;
 
   let message = "";
 
- if (isComing === "yes") {
+  if (isComing === "yes") {
     message =
       `Բարև✨։  ${name}: \n` +
       `Գալու եմ հարսանիքին: \n` +
